@@ -95,7 +95,7 @@ export default class Leaderboard extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.prevData !== nextProps.data) {
+    if (prevState.prevData !== nextProps.data || prevState.sortBy !== nextProps.sortBy) {
       return {
         sortedData: _sort(nextProps.data, nextProps.sortBy, nextProps.sort),
         prevData: nextProps.data
